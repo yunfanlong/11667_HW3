@@ -98,6 +98,7 @@ def train(
     batch_size: int = 32,
     epochs: int = 5,
 ) -> None:
+    device = get_device()
     tokenized_dataset = train_dataset.map(
         lambda x: {
             "input_ids": tokenizer.encode(x["text"] + x["target"])
@@ -137,6 +138,7 @@ def inference(
     calculator: bool = True,
     max_tokens: int = 40,
 ) -> str:
+    device = get_device()
     for i in range(max_tokens):
         if calculator and can_use_calculator(prefix):
             prefix = use_calculator(prefix)
