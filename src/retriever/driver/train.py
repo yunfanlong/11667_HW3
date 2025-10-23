@@ -8,12 +8,12 @@ from transformers import (
     set_seed,
 )
 
-from retriever.arguments import ModelArguments, DataArguments, \
+from arguments import ModelArguments, DataArguments, \
     TevatronTrainingArguments as TrainingArguments
-from retriever.dataset import TrainDataset
-from retriever.collator import TrainCollator
-from retriever.modeling import EncoderModel as DenseModel
-from retriever.trainer import TevatronTrainer as Trainer
+from dataset import TrainDataset
+from collator import TrainCollator
+from modeling import EncoderModel as DenseModel
+from trainer import TevatronTrainer as Trainer
 
 logger = logging.getLogger(__name__)
 
